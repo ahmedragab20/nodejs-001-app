@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  ar-catch:
+    specifier: ^0.0.23
+    version: 0.0.23(typescript@5.2.2)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -656,6 +659,14 @@ packages:
     dependencies:
       color-convert: 2.0.1
     dev: true
+
+  /ar-catch@0.0.23(typescript@5.2.2):
+    resolution: {integrity: sha512-4jBxYrp0f3vn+yfWiGxr49i+OrUwe0UH5qHvOoBAUKYYyX/ELdfTOGk3uBqMQhdkoPF54arExCHhm/mdC+0zIg==}
+    peerDependencies:
+      typescript: ^5.0.2
+    dependencies:
+      typescript: 5.2.2
+    dev: false
 
   /argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
@@ -1408,7 +1419,6 @@ packages:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
