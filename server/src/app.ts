@@ -6,13 +6,13 @@ import registers from "./registers";
 /**
  * Load environment variables from .env file
  */
-dotenv.config();
+const { parsed: env } = dotenv.config() || {};
 
 /**
  * Server port
  * @type {number}
  * @default 4000
- */ 
+ */
 const port: number = +process.env.PORT!;
 
 /**
