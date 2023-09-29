@@ -1,15 +1,26 @@
-import express, { Express } from 'express';
-import dotenv from 'dotenv';
-
-import productsRouter from './router/products';
-
+import express, { Express } from "express";
+import dotenv from "dotenv";
+import registerRouters from "./router";
+import registerAppMiddleware from "./middlewares/app.middleware";
+import registers from "./registers";
+/**
+ * Load environment variables from .env file
+ */
 dotenv.config();
-const port = process.env.PORT;
 
+/**
+ * Server port
+ * @type {number}
+ * @default 4000
+ */ 
+const port: number = +process.env.PORT!;
+
+/**
+ * Express app
+ * @type {Express}
+ */
 const app: Express = express();
 
-app.use(express.json());
-
-app.use('/products', productsRouter);
+registers(app, [registerAppMiddleware, registerRouters]);
 
 export { app, port };
