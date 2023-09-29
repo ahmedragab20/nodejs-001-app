@@ -8,9 +8,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      await $catch({
-        ep: "products",
-      });
+      await $catch({ ep: "products" });
     })();
   }, []);
 
