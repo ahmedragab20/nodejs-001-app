@@ -1,5 +1,6 @@
 import express, { Express } from "express";
 import dotenv from "dotenv";
+
 import registerRouters from "./router";
 import registerAppMiddleware from "./middlewares/app.middleware";
 import registers from "./registers";
