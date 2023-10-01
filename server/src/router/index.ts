@@ -1,14 +1,10 @@
-import { Express } from "express";
-import productsRouter from "./products.router";
-import { cpus, availableParallelism } from "node:os";
+import { Express, Router } from "express";
+import booksRouter from "./books.router";
+import { getBooks } from "./books.router/controllers/books.controllers";
 export default (app: Express) => {
-  app.use("/products", productsRouter);
+  const router = Router();
 
-  app.get("/cpus", (request, response) => {
-    const cpusDetails = cpus();
+  // router.use("/books", booksRouter);
 
-    response.json({
-      cpusDetails,
-    });
-  });
+  app.get("/books", getBooks)
 };
