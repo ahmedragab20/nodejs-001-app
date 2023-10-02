@@ -38,41 +38,51 @@ function App() {
         />
 
         <div className="flex flex-wrap gap-4 mt-3">
-          {products?.map((product) => (
-            <div
-              key={product.uuid}
-              className="flex flex-col items-center justify-center p-5 border rounded-xl hover:border-green-500 w-64 cursor-pointer select-none"
-              onContextMenu={(e) => {
-                e.preventDefault();
-                setPosition({ top: e.clientY, left: e.clientX });
-
-                setOpened(!opened);
-              }}
-            >
-              <div className="h-64 w-full">
-                <img
-                  src={product.poster_url}
-                  alt={product.title}
-                  className="w-full h-full object-contain"
+          {products?.length
+            ? products?.map((product) => (
+                <div
+                  key={product.uuid}
+                  className="flex flex-col items-center justify-center p-5 border rounded-xl hover:border-green-500 w-64 cursor-pointer select-none"
                   onContextMenu={(e) => {
                     e.preventDefault();
+                    setPosition({ top: e.clientY, left: e.clientX });
+
+                    setOpened(!opened);
                   }}
-                />
-              </div>
-              <div className="flex flex-col items-center justify-center w-full">
-                <h2 className="mt-2 text-lg font-bold truncate w-full text-center text-gray-700">
-                  {product.title}
+                >
+                  <div className="h-64 w-full">
+                    <img
+                      src={product.poster_url}
+                      alt={product.title}
+                      className="w-full h-full object-contain"
+                      onContextMenu={(e) => {
+                        e.preventDefault();
+                      }}
+                    />
+                  </div>
+                  <div className="flex flex-col items-center justify-center w-full">
+                    <h2 className="mt-2 text-lg font-bold truncate w-full text-center text-gray-700">
+                      {product.title}
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-500">
+                      {product.author}
+                    </p>
+                    <p className="mt-2 text-sm text-gray-500">
+                      {product.release_date}
+                    </p>
+                    <p className="mt-3 text-green-500 rounded-full px-3 border">
+                      {product.rate}
+                    </p>
+                  </div>
+                </div>
+              ))
+            : (
+              <div className="py-5">
+                <h2 className="mt-2 text-xl font-bold truncate w-full text-center text-gray-600">
+                  No books found...
                 </h2>
-                <p className="mt-2 text-sm text-gray-500">{product.author}</p>
-                <p className="mt-2 text-sm text-gray-500">
-                  {product.release_date}
-                </p>
-                <p className="mt-3 text-green-500 rounded-full px-3 border">
-                  {product.rate}
-                </p>
               </div>
-            </div>
-          ))}
+            )}
         </div>
       </main>
     </>
