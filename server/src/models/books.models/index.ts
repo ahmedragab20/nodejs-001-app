@@ -5,7 +5,12 @@ import { MongoBooksModel } from "./mongo.model";
 export default class BooksModel {
   async get() {
     try {
-      return await MongoBooksModel.find({});
+      return await MongoBooksModel.find(
+        {},
+        {
+          _id: 0,
+        }
+      );
     } catch (error) {
       throw new Error("Error getting books");
     }
