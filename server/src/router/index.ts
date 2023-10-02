@@ -1,10 +1,5 @@
-import { Express, Router } from "express";
-import booksRouter from "./books.router";
-import { getBooks } from "./books.router/controllers/books.controllers";
+import { Express } from "express";
+import BooksRouter from "./books.router";
 export default (app: Express) => {
-  const router = Router();
-
-  // router.use("/books", booksRouter);
-
-  app.get("/books", getBooks)
+  app.use("/books", BooksRouter);
 };

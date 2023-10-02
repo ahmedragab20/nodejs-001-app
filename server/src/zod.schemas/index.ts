@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const zBookSchema = z.object({
-  // _id: z.string().regex(/^[0-9a-f]{24}$/),
+  uuid: z.string(),
   title: z.string(),
   release_date: z.string(),
   rate: z.number(),

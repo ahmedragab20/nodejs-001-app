@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
 
 export const MongoBookSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
+  uuid: {
+    type: String,
     required: true,
     unique: true,
   },

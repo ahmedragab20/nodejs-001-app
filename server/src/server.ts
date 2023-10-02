@@ -2,7 +2,7 @@ import { createServer } from "http";
 import mongoose from "mongoose";
 import { app, port } from "./app";
 
-const mdb = `mongodb+srv://rgbxO:${process.env.MONGOBD_PASSWORD}@cluster0.irpemng.mongodb.net/rgbxODB?retryWrites=true&w=majority`;
+const mdb = `mongodb+srv://rgbxO:${process.env.MONGOBD_PASSWORD}@cluster0.irpemng.mongodb.net/rgbxO?retryWrites=true&w=majority`;
 
 const server = createServer(app);
 
