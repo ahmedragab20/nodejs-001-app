@@ -22,7 +22,7 @@ export default function Dropdown<T>(props: DropdownProps<T>) {
         document.getElementById(componentKey) &&
         !document.getElementById(componentKey)?.contains(event.target)
       ) {
-        props.onChange(undefined);
+        props?.onChange(undefined);
       }
     }
 
@@ -36,7 +36,7 @@ export default function Dropdown<T>(props: DropdownProps<T>) {
   return (
     <div
       id={componentKey}
-      className="p-1 rounded-xl border max-w-[230px] min-w-[130px] select-none fixed z-50 bg-[#f1f1f1c0] backdrop-blur-sm shadow-xl"
+      className="p-1 rounded-xl border max-w-[230px] min-w-[130px] select-none fixed z-50 bg-[#f1f1f1c7] backdrop-blur-sm shadow-xl"
       style={{
         top: props.position.top,
         left: props.position.left,

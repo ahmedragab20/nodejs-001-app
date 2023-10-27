@@ -1,3 +1,7 @@
+export interface IGeneric {
+  [key: string]: any;
+}
+
 export interface IBook {
   uuid: string;
   title: string;
