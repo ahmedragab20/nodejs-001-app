@@ -147,7 +147,7 @@ function App() {
             <div className="sm:p-5 p-3">
               {previewBook && (
                 <div className="flex justify-between sm:flex-row flex-col">
-                  <div className="h-full flex-shrink-0">
+                  <div className="h-full flex-grow-0 w-56 m-auto">
                     <div className="h-56 w-full">
                       <img
                         src={previewBook.poster_url}
